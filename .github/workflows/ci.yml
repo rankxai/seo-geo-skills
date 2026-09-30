@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 22, 24]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+      # No npm install: the scripts have no dependencies, and that is a rule of this repo.
+      - run: node --test tests/*.test.mjs
+
+  docs:
+    name: Docs follow their own rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # The prose checker from the content-review skill, run over every published Markdown file:
+      # no em dashes, no invisible characters, no stock machine phrases, no known false claims.
+      - name: Check prose
+        run: |
+          set -e
+          node skills/content-review/scripts/check-prose.mjs --docs *.md examples/*.md .github/*.md skills/*/SKILL.md skills/*/references/*.md
+      - name: Validate skill metadata
+        run: node tests/validate-skills.mjs
+      - name: Shared script copies are in sync
+        run: node scripts/sync-shared.mjs --check

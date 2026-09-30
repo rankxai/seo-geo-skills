@@ -1,0 +1,48 @@
+check-crawlers  https://rankxai.com/robots.txt  (HTTP 200, 2,091 bytes, 18 group(s), path /)
+
+  SEARCH (indexes pages an AI product cites)
+    OAI-SearchBot          allowed     its own group, rule "allow: /"  live: 200 open
+    Claude-SearchBot       allowed     its own group, rule "allow: /"  live: 200 open
+    PerplexityBot          allowed     its own group, rule "allow: /"  live: 200 open
+    Googlebot              allowed     the * group, rule "allow: /"  live: 200 open
+    Google-CloudVertexBot  allowed     the * group, rule "allow: /"  live: unknown
+    meta-webindexer        allowed     the * group, rule "allow: /"  live: 200 open
+    Amzn-SearchBot         allowed     the Bingbot group, by the vendor's documented fallback, rule "allow: /"  live: 200 open
+    Applebot               allowed     the * group, rule "allow: /"  live: 200 open
+    MistralAI-Index        allowed     the * group, rule "allow: /"  live: 200 open
+    DuckAssistBot          allowed     the * group, rule "allow: /"  live: 200 open
+    Bingbot                allowed     its own group, rule "allow: /"  live: 200 open
+    Bytespider             allowed     its own group, rule "allow: /"  live: 200 open
+
+  TRAINING (content may be used to train models)
+    GPTBot                 allowed     its own group, rule "allow: /"  live: 200 open
+    ClaudeBot              allowed     its own group, rule "allow: /"  live: 200 open
+    meta-externalagent     allowed     its own group, rule "allow: /"  live: 200 open
+    Amazonbot              allowed     its own group, rule "allow: /"  live: 200 open
+    CCBot                  allowed     the * group, rule "allow: /"  live: 200 open
+    MistralAI-Training     allowed     the * group, rule "allow: /"  live: 200 open
+    xAI (Grok)             no token    Names such as GrokBot and xAI-Bot circulate but are not documented by xAI; reports describe fetches under generic browser user agents.  live: unverifiable
+
+  USER-FETCH (fetches a page when a person asks)
+    ChatGPT-User           allowed     its own group, rule "allow: /"  live: 200 signal-only
+    ChatGPT Cloud browser  no token    OpenAI documents request signing, not robots.txt: each request carries a Signature-Agent header set to "https://chatgpt.com" and is signed with Web Bot Auth (RFC 9421). CDNs list it as ChatGPT Agent.  live: unverifiable
+    Claude-User            allowed     its own group, rule "allow: /"  live: 200 open
+    Perplexity-User        allowed     its own group, rule "allow: /"  live: 200 signal-only
+    Google-Agent           allowed     the * group, rule "allow: /"  live: 200 signal-only
+    Google-GeminiNotebook  allowed     the * group, rule "allow: /"  live: 200 signal-only
+    meta-externalfetcher   allowed     the * group, rule "allow: /"  live: 200 signal-only
+    Amzn-User              allowed     the * group, rule "allow: /"  live: 200 signal-only
+    MistralAI-User         allowed     the * group, rule "allow: /"  live: 200 open
+
+  CONTROL TOKENS (robots.txt signals, no crawler)
+    Google-Extended        allowed     its own group, rule "allow: /"  live: policy-only
+    Applebot-Extended      allowed     its own group, rule "allow: /"  live: policy-only
+
+  LIVE CONTROLS  browser 200 ok, curl 200 ok
+
+  info   fallback-group: Amzn-SearchBot has no group of its own and follows the Bingbot group. Amazon does not say which search bots it means. This checker uses the Googlebot group when one exists, then the Bingbot group, then the * group, so treat a fallback verdict as an inference from Amazon's wording.
+  info   probe-caveat: probes send each crawler's user agent from this machine's IP. Sites that verify crawlers by IP or reverse DNS can treat a probe differently from the real crawler.
+  info   llms-txt: /llms.txt present and well formed: "RankX AI", 8 section(s), 39 link(s). No major AI search engine documents reading it.
+
+  0 error(s), 0 warning(s), 3 info
+

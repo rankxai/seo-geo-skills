@@ -1,0 +1,14 @@
+# A group for "Google" names no real crawler. Under RFC 9309 exact matching
+# it does not apply to Google-Extended, Googlebot or Google-Agent.
+User-agent: Google
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+Disallow: /private/
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: *
+Disallow: /admin/

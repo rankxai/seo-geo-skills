@@ -1,0 +1,17 @@
+check-sitemap  https://rankxai.com
+
+  discovery    robots.txt lists 1 sitemap(s)
+  index        https://rankxai.com/sitemap.xml  (7 entries)
+  urlset       https://rankxai.com/sitemaps/pages.xml  (38 entries)
+  urlset       https://rankxai.com/sitemaps/posts.xml  (38 entries)
+  urlset       https://rankxai.com/sitemaps/topics.xml  (7 entries)
+  urlset       https://rankxai.com/sitemaps/glossary.xml  (72 entries)
+  urlset       https://rankxai.com/sitemaps/tools.xml  (5 entries)
+  urlset       https://rankxai.com/sitemaps/compare.xml  (6 entries)
+  urlset       https://rankxai.com/sitemaps/docs.xml  (105 entries)
+  urls         271 unique, 25 fetched, 25 clean
+
+  info   sample: checked 25 of 271 URLs (--sample 25); the rest were not fetched
+
+  0 error(s), 0 warning(s), 1 info
+

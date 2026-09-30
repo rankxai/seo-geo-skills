@@ -1,0 +1,20 @@
+{
+  "name": "rankx",
+  "interface": {
+    "displayName": "RankX AI"
+  },
+  "plugins": [
+    {
+      "name": "rankx-seo",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/rankxai/seo-geo-skills.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

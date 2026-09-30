@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use or cite this project, please cite it as below."
+title: "SEO and GEO skills for AI agents, graded by evidence"
+authors:
+  - name: "RankX AI"
+    website: "https://rankxai.com"
+repository-code: "https://github.com/rankxai/seo-geo-skills"
+license: MIT
+version: "1.0.0"
+date-released: "2026-09-30"
+keywords:
+  - seo
+  - generative engine optimization
+  - answer engine optimization
+  - ai search
+  - agent skills

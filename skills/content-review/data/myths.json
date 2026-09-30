@@ -1,0 +1,308 @@
+{
+  "about": "Claims that are known to be wrong, or that have been measured not to work, each with the primary source that settles it and the date it was checked. Read by audit-page.mjs (visible text of a page) and check-prose.mjs (a draft). Patterns are JavaScript regular expressions, stored as source plus flags.",
+  "policy": "Patterns are deliberately narrow: each targets the wording that circulates plus its obvious paraphrases, and nothing wider, because a check that fires on correct copy gets switched off. The why field never restates the false sentence as fact. An entry whose checked date is older than staleDays is still used, but the scripts say it is due for a recheck.",
+  "staleDays": 90,
+  "myths": [
+    {
+      "id": "aio-opt-out-only-snippet-controls",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bonly snippet controls\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bonly (?:the )?(?:controls?|levers?|directives?) (?:that )?(?:limits?|removes?|controls?) (?:what )?AI Overviews\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bno setting (?:that )?(?:removes|keeps|takes)\\b[^.]{0,80}\\bAI Overview",
+          "flags": "i"
+        },
+        {
+          "source": "\\bone directive removes a page from (?:Google )?AI Overviews\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Since 31 Aug 2026 Search Console's Search generative AI setting removes a site from AI Overviews and AI Mode and leaves ordinary results untouched. Snippet controls and noindex are the per-page levers, not the only ones.",
+      "source": "https://support.google.com/webmasters/answer/16908024",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "google-extended-outside-search",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bGoogle-Extended\\b[^.]{0,120}\\boutside (?:Google )?Search\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bGoogle-Extended\\b[^.]{0,60}\\bonly (?:governs|controls|signals)\\b[^.]{0,60}\\bGemini\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google-Extended also limits training of the models behind Search generative AI features (Search Console Help). It governs training, never inclusion, but it is not confined to products outside Search.",
+      "source": "https://support.google.com/webmasters/answer/16908024",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "no-ai-crawler-renders-javascript",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bno (?:major |mainstream |known )?AI (?:web )?(?:crawler|bot)s? (?:executes?|runs?|renders?) (?:any )?JavaScript\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bAI (?:web )?(?:crawlers|bots) (?:do not|don't|never|cannot|can't) (?:execute|run|render) (?:any )?JavaScript\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bnone of (?:these|them) (?:executes?|runs?|renders?) JavaScript\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Googlebot, Bingbot and Applebot all render JavaScript (Bing: \"Allow Bingbot to crawl and render content efficiently\"; Apple: \"Applebot may render the content of your website within a browser\"). Scope the claim to named crawlers that do not, such as GPTBot, ClaudeBot and PerplexityBot.",
+      "source": "https://support.apple.com/en-us/119829",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "gen-ai-report-subset-of-sites",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b(?:Generative AI|gen-AI) performance reports?\\b[^.]{0,160}\\bsubset of sites\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "The Search Console Generative AI performance report started with a subset of sites in June 2026 and has been available to every site since 31 Aug 2026.",
+      "source": "https://support.google.com/webmasters/answer/16984139",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "schema-citation-lift",
+      "kind": "measured-not-to-work",
+      "patterns": [
+        {
+          "source": "\\+?22 ?(?:%|per ?cent|percent) citation lift\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\b(?:schema(?:\\.org)?(?: markup)?|structured data|JSON-LD)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:boosts?|increases?|improves?|lifts?|doubles?|triples?)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:AI )?citations?\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "The controlled evidence points the other way: Ahrefs tracked 1,885 pages that added schema against 4,000 matched controls and found \"no major uplift in citations\" on Google AI Overviews, AI Mode or ChatGPT. Google adds that there is \"no special schema.org markup\" to add for generative AI search. Neither a fixed percentage lift nor a general citation boost from adding schema is supported.",
+      "source": "https://ahrefs.com/blog/schema-ai-citations/",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "faq-rich-results-restricted-not-retired",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bFAQ rich results?\\b[^.]{0,40}\\b(?:are|remain) (?:only )?(?:shown|available|limited|restricted) (?:only )?(?:to|for) (?:government|authoritative)",
+          "flags": "i"
+        }
+      ],
+      "why": "Google stopped showing FAQ rich results on 7 May 2026. The 2023 restriction to government and health sites is history, not the current state.",
+      "source": "https://developers.google.com/search/updates",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "overlap-11-percent-misattributed",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b11 ?(?:%|per ?cent\\b|percent\\b)[^.]{0,100}\\bChatGPT\\b[^.]{0,60}\\bAI Overviews\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Profound's 11% cited-domain overlap compares ChatGPT with Perplexity (100,000 prompts), not ChatGPT with AI Overviews. The same post reports 6% for AI Overviews against Copilot and 16.4% for Perplexity against AI Overviews.",
+      "source": "https://www.tryprofound.com/blog/citation-overlap-strategy",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "geo-paper-cite-sources-top-40",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bcit(?:e|ing) (?:your )?sources\\b(?:(?!quotation|statistic)[^.]){0,80}?(?<![\\d\\-–]\\s?|\\d\\sto\\s)\\+?4[01] ?(?:%|per ?cent|percent)",
+          "flags": "i"
+        },
+        {
+          "source": "(?<![\\d\\-–]\\s?|\\d\\sto\\s)\\+?4[01] ?(?:%|per ?cent\\b|percent\\b)(?:(?!quotation|statistic)[^.]){0,60}\\b(?:from|by|for) cit(?:e|ing) (?:your )?sources\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\b(?:GEO|Princeton|Aggarwal)\\b[^.]{0,120}\\bcit(?:e|ing) (?:your )?sources\\b[^.]{0,30}\\b(?:was|is|as|ranked) (?:the )?(?:top|best|most effective|strongest|single best|highest-performing)\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "In the GEO paper (Aggarwal et al., KDD 2024) Table 1, Quotation Addition scores highest on Position-Adjusted Word Count: 27.2 against a 19.3 baseline, about +41%. Cite Sources scores 24.6 (about +27%) and Statistics Addition 25.2 (about +31%). The \"up to 40%\" headline describes the best methods, and the paper calls Cite Sources \"relatively less effective when used alone\".",
+      "source": "https://arxiv.org/html/2311.09735v3",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "geo-paper-134-167-words",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b134\\s?(?:-|–|to|and)\\s?167\\b[^.]{0,15}\\bwords?\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "The GEO paper (Aggarwal et al., arXiv 2311.09735) prescribes no passage length: neither 134 nor 167 appears anywhere in its text, and its experiments change what a source says (quotations, statistics, citations, fluency), not how long a passage is. Attribute a length rule to its real source or drop it.",
+      "source": "https://arxiv.org/html/2311.09735v3",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "llms-txt-helps-google",
+      "kind": "measured-not-to-work",
+      "patterns": [
+        {
+          "source": "\\bllms\\.txt\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,80}?\\b(?:improves?|boosts?|helps?|increases?|lifts?)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:Google (?:rankings?|Search|visibility)|rankings? (?:in|on) Google)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bGoogle (?:Search )?(?:uses|reads|requires|rewards)\\b[^.]{0,15}\\bllms\\.txt\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bllms\\.txt\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:is|are) (?:now )?(?:required|mandatory|essential|necessary|needed)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,60}?\\b(?:Google|AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "(?<!(?:n't|\\bnot|\\bnever|\\bno|\\bnor|\\bcannot)\\s)\\b(?:need|needs|must (?:have|add|create|publish)|have to (?:add|create|publish))\\b (?:an? |your own )?llms\\.txt\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,60}?\\b(?:Google|AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google states llms.txt files \"aren't needed for Google Search (and won't negatively or positively impact your visibility or rankings)\", and its AI optimization guide adds that Google Search, including its generative AI features, \"doesn't use them\". No major AI search engine documents using the file either; keep it, if at all, for other consumers.",
+      "source": "https://developers.google.com/search/updates#clarifying-guidance-on-llms.txt-files",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "chunking-required-for-google",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "(?<!(?:n't|\\bnot|\\bnever|\\bno|\\bnor|\\bcannot)\\s)\\b(?:must|need to|needs to|have to|has to|should always)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:chunk|break|split|cut)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,50}?\\b(?:chunks|pieces|passages|snippets|blocks)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,80}?\\b(?:Google|AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\b(?:Google|AI Overviews?|AI Mode)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,30}?\\b(?:requires|needs|only understands?|can only (?:read|use|understand))\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,30}?\\bchunk(?:ed|s|ing)\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google's guide to generative AI features says \"There's no requirement to break your content into tiny pieces for AI to better understand it\" and that its systems can \"show the relevant piece to users\" from a page covering several topics. Short sections can help readers; they are not a Google requirement.",
+      "source": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "schema-required-for-ai-overviews",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bFAQ(?:Page)?\\s?(?:schema|markup|structured data)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,60}?\\b(?:to|for|helps?|gets?|boosts?|improves?|increases?|wins?)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\b(?:schema(?:\\.org)?(?: markup)?|structured data)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:is|are) (?:now )?(?:required|needed|necessary|essential|mandatory)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:AI Overviews?|AI Mode|generative AI (?:search|features))\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google: \"Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add.\" FAQ rich results also stopped appearing in Google Search on 7 May 2026, so FAQPage markup earns no Google feature at all.",
+      "source": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "ai-overviews-only-top-10",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b(?:AI Overviews?|AI Mode)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\bonly (?:cites?|links? to|pulls? from|uses?|draws? from|shows?|sources? from)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:top (?:10|ten)|first page|page one)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bonly (?:pages|sites|results|URLs|content) (?:that )?(?:rank(?:ing)?|already rank) (?:in|on) (?:the )?(?:top (?:10|ten)|first page|page one)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,60}?\\b(?:AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "(?<!(?:n't|\\bnot|\\bnever|\\bno|\\bnor|\\bcannot)\\s)\\b(?:must|need to|needs to|have to|has to)\\b rank (?:in|on) (?:the )?(?:top (?:10|ten)|first page|page one)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:appear|show up|be cited|get cited|be included)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google says AI Overviews and AI Mode \"may use a 'query fan-out' technique\" and \"identify more supporting web pages, allowing us to display a wider and more diverse set of helpful links associated with the response than with a classic web search\". Links are not limited to the top ten classic results for the original query.",
+      "source": "https://developers.google.com/search/docs/appearance/ai-features",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "eeat-ranking-factor-score",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b(?:E-E-A-T|EEAT|E-A-T)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:is|as|remains) (?:a |an |the )?(?:direct |official |confirmed |major |key |core |measurable )?(?:Google )?ranking (?:factor|signal)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "(?<!(?:n't|\\bnot|\\bnever|\\bno|\\bnor|\\bcannot)\\s)\\b(?:assigns?|gives?|calculates?|computes?|scores? (?:each|every|your) (?:page|site) with)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:an? )?(?:E-E-A-T|EEAT|E-A-T) (?:score|rating)s?\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google: \"While E-E-A-T itself isn't a specific ranking factor, using a mix of factors that can identify content with good E-E-A-T is useful.\" There is no E-E-A-T score to raise; describe the signals a page can show instead.",
+      "source": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "google-penalises-ai-content",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\bGoogle\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,30}?\\b(?:penali[sz]es|bans|punishes|demotes|de-?indexes|devalues|blocks)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b|\\bscaled\\b|\\bspam(?:my)?\\b|\\bmass\\b|\\blow[- ]quality\\b|\\bunhelpful\\b|\\bthin\\b)[^.]){0,20}?\\bAI[- ](?:generated|written) (?:content|text|articles|pages|posts)\\b(?![^.]{0,60}\\b(?:that|which|when|if|unless|where|made|created|produced|designed|primarily)\\b)",
+          "flags": "i"
+        },
+        {
+          "source": "\\bAI[- ](?:generated|written) (?:content|text|articles|pages|posts)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:is|are|gets?) (?:automatically )?(?:penali[sz]ed|banned|demoted|de-?indexed|against Google'?s? (?:guidelines|policies|rules))\\b(?![^.]{0,60}\\b(?:when|if|unless|where|that|which|because)\\b)",
+          "flags": "i"
+        }
+      ],
+      "why": "Google: \"Appropriate use of AI or automation is not against our guidelines.\" What its spam policies target is content made primarily to manipulate rankings, including scaled content abuse, however it was produced. Name that, not AI as such.",
+      "source": "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "core-web-vitals-major-factor",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b(?:Core Web Vitals|CWV|page speed|page experience)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,30}?\\b(?:is|are|remains?|as) (?:a |an |the |one of the )?(?:major|huge|massive|big|biggest|primary|dominant|top|most important|decisive|heavily weighted) (?:Google )?ranking (?:factor|signal)s?\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\b(?:passing|good|better|improving|improved|green) (?:Core Web Vitals|CWV)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?(?<!(?:n't|\\bnot|\\bnever|\\bno|\\bnor|\\bcannot)\\s)\\b(?:guarantees?|will (?:boost|improve|increase|lift)|dramatically (?:boosts?|improves?|increases?))\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,30}?\\b(?:rank(?:s|ing|ings)?|positions?)\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Core Web Vitals are used by Google's ranking systems, but Google says it \"always seeks to show the most relevant content, even if the page experience is sub-par\", and that good Core Web Vitals reports do not guarantee top rankings. Treat them as a tiebreaker-scale signal and a user-experience goal, not a major factor.",
+      "source": "https://developers.google.com/search/docs/appearance/page-experience",
+      "checked": "2026-09-29"
+    },
+    {
+      "id": "google-extended-removes-ai-overviews",
+      "kind": "wrong-claim",
+      "patterns": [
+        {
+          "source": "\\b(?:block(?:ing|s|ed)?|disallow(?:ing|s|ed)?|opt(?:ing)? out (?:of|via|with|using))\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,15}?\\bGoogle-Extended\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:removes?|keeps?|excludes?|stops?|prevents?|takes?|opts?)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        },
+        {
+          "source": "\\bGoogle-Extended\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,30}?\\b(?:controls?|governs?|decides?|determines?)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:whether|if)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,40}?\\b(?:appears?|shows? up|is (?:shown|cited|included)|gets? cited)\\b(?:(?!n't\\b|\\bnot\\b|\\bno\\b|\\bnever\\b|\\bwithout\\b)[^.]){0,20}?\\b(?:AI Overviews?|AI Mode)\\b",
+          "flags": "i"
+        }
+      ],
+      "why": "Google: \"Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.\" It limits training, including of the models behind Search generative AI features. Inclusion in AI Overviews and AI Mode is controlled by the Search generative AI setting in Search Console, snippet controls and noindex.",
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "checked": "2026-09-29"
+    }
+  ]
+}

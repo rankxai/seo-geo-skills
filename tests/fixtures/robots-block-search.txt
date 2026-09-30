@@ -1,0 +1,16 @@
+User-agent: GPTBot
+User-agent: CCBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Claude
+Disallow: /
+
+User-agent: Applebot
+Crawl-delay: 10
+Allow: /

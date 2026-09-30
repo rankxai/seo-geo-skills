@@ -1,0 +1,19 @@
+{
+  "name": "rankx",
+  "description": "Open-source SEO and AI search skills from RankX AI.",
+  "owner": {
+    "name": "RankX AI",
+    "url": "https://rankxai.com"
+  },
+  "plugins": [
+    {
+      "name": "rankx-seo",
+      "description": "Evidence-graded SEO, GEO and AEO skills with runnable checks: get found by Google and cited by ChatGPT, Perplexity, Claude, Copilot, Gemini and AI Overviews.",
+      "source": "./",
+      "author": {
+        "name": "RankX AI",
+        "url": "https://rankxai.com"
+      }
+    }
+  ]
+}

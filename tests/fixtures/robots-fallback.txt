@@ -1,0 +1,7 @@
+# Googlebot is named, Applebot and Amzn-SearchBot are not. Both vendors
+# document falling back to other search bots' rules before the star group.
+User-agent: Googlebot
+Disallow: /search-only/
+
+User-agent: *
+Disallow: /

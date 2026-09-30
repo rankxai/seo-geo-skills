@@ -1,0 +1,20 @@
+audit-page  https://www.bbc.co.uk/news  (HTTP 200, 1,096,883 bytes)
+
+  title        Home - BBC News
+  canonical    https://www.bbc.co.uk/news
+  @types       CollectionPage, ImageObject, ItemList, NewsMediaOrganization
+
+  WARN   html-size: HTML is 1.10 MB uncompressed, over half of Googlebot's 2 MB fetch limit
+  WARN   heading-levels: heading level skipped: h1 then h3. Skipped levels break the outline that screen readers and passage extractors rely on.
+  WARN   bing-noarchive: X-Robots-Tag "bingbot: noarchive": noarchive keeps this page out of Microsoft Copilot answers (Bing uses it to exclude the page from AI answers; nocache limits it to title, URL and snippet). Google ignores both. As written, it applies to bingbot only.
+  WARN   img-dimensions: 1 of 129 <img> without both width and height. The browser cannot reserve space for them, which causes layout shift (CLS). CSS aspect-ratio also works; this check cannot see stylesheets.
+  WARN   lcp-lazy: the first <img> in the page (https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/cae0/live/374a62f0-bc30-11f1-bc1f-3f186ca4140c.jpg) has loading="lazy". If it is the largest element above the fold, lazy loading delays Largest Contentful Paint (web.dev).
+  info   server-text: 20637 characters (3330 words) of visible text in the raw HTML
+  info   meta-description-length: description is 245 characters; around 150 to 160 fits most desktop results (Google sets no limit and truncates by width)
+  info   canonical: canonical points at this URL
+  info   json-ld-types: @type: CollectionPage, ImageObject, ItemList, NewsMediaOrganization
+  info   answer-first: first paragraph has 14 words and opens with a plain statement, not a question or preamble: "Burnham vows to end existing pension triple lock in 2030 to help fund care"
+
+  0 error(s), 5 warning(s), 5 info
+  A clean run means the mechanical rules pass. Whether the page deserves to be cited is a separate, human question.
+

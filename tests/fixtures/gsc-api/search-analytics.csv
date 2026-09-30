@@ -1,0 +1,9 @@
+query,page,clicks,impressions,ctr,position,date
+widget pricing,https://example.com/pricing,5,200,0.0250,6,2026-09-01
+widget pricing,https://example.com/blog/widget-cost,2,150,0.0133,12,2026-09-01
+widget pricing,https://example.com/,0,5,0.0000,40,2026-09-01
+widget colours,https://example.com/colours,10,100,0.1000,2,2026-09-01
+widget pricing,https://example.com/pricing,5,200,0.0250,6,2026-09-02
+widget pricing,https://example.com/blog/widget-cost,2,150,0.0133,12,2026-09-02
+widget pricing,https://example.com/,0,5,0.0000,40,2026-09-02
+widget colours,https://example.com/colours,10,100,0.1000,2,2026-09-02

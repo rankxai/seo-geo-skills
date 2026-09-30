@@ -1,0 +1,43 @@
+seo-geo-skills
+Copyright (c) 2026 RankX AI. Released under the MIT License (see LICENSE).
+
+This project includes or adapts work from the following projects.
+
+1. SlopMonster (https://github.com/ItsssssJack/SlopMonster)
+   Copyright (c) 2026 Jack Roberts. MIT License.
+   Adapted in skills/content-review/scripts/: root matching of word inflections,
+   the split between warning words and failing phrases, and the sentence-window
+   approach used by the prose checker. The word lists and rules here have been
+   rewritten and extended.
+
+   MIT License
+
+   Copyright (c) 2026 Jack Roberts
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+2. claude-seo (https://github.com/AgriciDaniel/claude-seo)
+   Copyright (c) Daniel Agrici. MIT License.
+   Its data/google-updates.json was the starting candidate list for
+   skills/seo-geo/data/google-changes.json. Every entry in our file was
+   re-checked against Google's own pages before inclusion, and several dates
+   and details were corrected. The facts themselves come from Google.
+
+All studies, documentation and statistics cited in the skills belong to their
+publishers and are referenced by link and short quotation.

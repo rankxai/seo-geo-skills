@@ -1,0 +1,23 @@
+name: Script bug
+description: A script crashed, gave a wrong result, or reported something unchecked as a pass
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: input
+    id: command
+    attributes:
+      label: Command you ran
+      placeholder: node skills/seo-geo/scripts/audit-page.mjs https://example.com
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, and what happened
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node version and operating system
+      placeholder: Node 22.9, macOS 15

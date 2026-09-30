@@ -1,0 +1,351 @@
+{
+  "about": "Google Search changes that affect how pages are crawled, indexed, shown or described, each confirmed on a Google-owned page. Read before writing or refreshing any claim about Google Search, and check the date of the newest entry against today before trusting it as complete.",
+  "policy": "Every entry cites a Google-owned host and carries a short verbatim quote from that page in the verified field. Trade-press claims never enter updates. Bump last_verified whenever an entry is added or re-read. Treat the file as stale after about 30 days without a re-read.",
+  "provenance": "Candidate list seeded from github.com/AgriciDaniel/claude-seo data/google-updates.json (MIT, Copyright (c) Daniel Agrici); every entry here was re-read on Google's own page on 29 Sep 2026 before inclusion, and candidate details were corrected wherever Google's page disagreed. The 29 Sep 2026 pass also walked developers.google.com/search/updates, the crawling changelog, the Search Central blog and status.search.google.com incidents.json from February 2026 onwards and added every item relevant to site owners, skipping travel-only and local-only items (aggregator and supplier units, regional-differences documentation, the Tennessee small-business article) and minor wording changes (the crawl budget polish, the Google-InspectionTool user agent correction, package tracking).",
+  "last_verified": "2026-09-29",
+  "updates": [
+    {
+      "date": "2026-02-05",
+      "name": "February 2026 Discover core update",
+      "kind": "core",
+      "source": "https://status.search.google.com/incidents/mYbNTqV1ytDc2fA8hUz4",
+      "ended": "2026-02-27",
+      "notes": "A core update to Discover only, released first for English-language users in the US with expansion to other countries and languages promised later. Check Discover traffic moves between 5 and 27 Feb against it.",
+      "verified": "Released the February 2026 Discover core update ... The rollout was complete as of February 27, 2026."
+    },
+    {
+      "date": "2026-03-20",
+      "name": "Google-Agent user agent and user-triggered-agents IP ranges added",
+      "kind": "crawling",
+      "source": "https://developers.google.com/crawling/docs/changelog#added-the-google-agent-user-agent",
+      "notes": "Google-Agent fetches and acts on pages for agents running on Google infrastructure at a user's request. As a user-triggered fetcher it generally ignores robots.txt; verify it against user-triggered-agents.json rather than blocking by user agent.",
+      "verified": "The Google-Agent user agent is rolling out over the next few weeks"
+    },
+    {
+      "date": "2026-03-24",
+      "name": "March 2026 spam update",
+      "kind": "spam",
+      "source": "https://status.search.google.com/incidents/VbnSXAH4SmEcxPtx4YSD",
+      "ended": "2026-03-25",
+      "notes": "Global, all-language spam update that ran about 19.5 hours. No action needed for a site that uses no spam tactics.",
+      "verified": "The rollout was complete as of March 25, 2026."
+    },
+    {
+      "date": "2026-03-24",
+      "name": "Robots meta tags outside the HTML head documented",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#added-a-note-on-the-robots-meta-tags-documentation",
+      "notes": "Google says the behaviour did not change; it was previously undocumented. Keep robots meta tags in the head and confirm them in the rendered HTML.",
+      "verified": "Added a note to the robots meta tags documentation on the way Google Search processes robots meta tags outside the HTML head."
+    },
+    {
+      "date": "2026-03-24",
+      "name": "More supported properties for Discussion Forum and QA Page markup",
+      "kind": "schema",
+      "source": "https://developers.google.com/search/updates#added-new-supported-properties-for-discussion-forum-and-qa-page-markup",
+      "notes": "Matters only for forum and Q&A sites. The new properties describe comment thread structure so Google does not misread nested replies.",
+      "verified": "For providing more clarity on comment thread structure to Google ingestion systems."
+    },
+    {
+      "date": "2026-03-27",
+      "name": "March 2026 core update",
+      "kind": "core",
+      "source": "https://status.search.google.com/incidents/7eTbAa2jWdToLkraZj5y",
+      "ended": "2026-04-08",
+      "notes": "Broad core ranking update. Check rank movement between 27 Mar and 8 Apr against it before blaming on-site changes.",
+      "verified": "Released the March 2026 core update ... The rollout was complete as of April 8, 2026."
+    },
+    {
+      "date": "2026-03-31",
+      "name": "Googlebot fetches the first 2MB of a URL (64MB for PDFs); other crawlers default to 15MB",
+      "kind": "crawling",
+      "source": "https://developers.google.com/search/blog/2026/03/crawler-blog-post",
+      "notes": "Content, links and markup past the first 2MB of an HTML response, headers included, are not fetched by Googlebot. Keep critical content and structured data early in very large pages.",
+      "verified": "Googlebot currently fetches up to 2MB for any individual URL (excluding PDFs)."
+    },
+    {
+      "date": "2026-03-31",
+      "name": "Google's crawler IP range files moved to /crawling/ipranges/",
+      "kind": "crawling",
+      "source": "https://developers.google.com/search/blog/2026/03/crawler-ip-ranges",
+      "notes": "Update firewall and verification scripts that fetch the JSON files from /search/apis/ipranges/. Google says the old paths will redirect \"within 6 months\", which falls around the end of September 2026.",
+      "verified": "we're moving them to a more general location: developers.google.com/crawling/ipranges/."
+    },
+    {
+      "date": "2026-04-13",
+      "name": "Back button hijacking spam policy (enforcement from 2026-06-15)",
+      "kind": "policy",
+      "source": "https://developers.google.com/search/blog/2026/04/back-button-hijacking",
+      "notes": "Back button hijacking is now an explicit malicious-practices violation. Audit third-party scripts and ad or consent libraries for history manipulation.",
+      "verified": "we're publishing this policy two months in advance of enforcement on June 15, 2026."
+    },
+    {
+      "date": "2026-04-14",
+      "name": "Spam reports may now be used for manual actions (clarified 2026-04-23)",
+      "kind": "policy",
+      "source": "https://developers.google.com/search/updates#clarifying-the-use-of-spam-reports",
+      "notes": "A spam report can now lead to a manual action. Google clarified on 23 Apr when and why, after feedback on the change.",
+      "verified": "Google may now use spam report submissions to take manual action."
+    },
+    {
+      "date": "2026-04-20",
+      "name": "\"Read more\" deep links documented in the snippet guide",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#added-a-section-about-read-more-deep-links",
+      "notes": "The snippet documentation now has a section on how to make a \"read more\" deep link into part of a page more likely.",
+      "verified": "To explain how to increase the likelihood of your content appearing with a \"read more\" deeplink in Google Search results."
+    },
+    {
+      "date": "2026-04-30",
+      "name": "Preferred sources available in all Google Search languages",
+      "kind": "product",
+      "source": "https://developers.google.com/search/updates#expanding-preferred-sources-to-all-languages-where-google-search-is-available",
+      "notes": "Readers in any Search language can now mark a site as a preferred source; translated button assets are provided.",
+      "verified": "The preferred sources feature is now available in all languages supported by Google Search."
+    },
+    {
+      "date": "2026-05-04",
+      "name": "Web Bot Auth documentation for verifying Google requests (experimental)",
+      "kind": "crawling",
+      "source": "https://developers.google.com/crawling/docs/changelog#adding-web-bot-auth-documentation",
+      "notes": "Some Google user agents have started signing requests with Web Bot Auth, and Google now documents how to verify those signatures during the experimental phase.",
+      "verified": "as some Google user agents are now starting to use Web Bot Auth."
+    },
+    {
+      "date": "2026-05-07",
+      "name": "FAQ rich results no longer shown (deprecation notice 2026-05-08, documentation removed 2026-06-15)",
+      "kind": "schema",
+      "source": "https://developers.google.com/search/updates#deprecating-the-faq-rich-result-feature",
+      "notes": "FAQPage markup no longer earns a rich result in Google. Keep it only for other consumers and never claim a Google SERP benefit. The docs were removed on 15 Jun, and the old faqpage URL now redirects to the changelog.",
+      "verified": "This feature will no longer appear in Google Search starting May 7, 2026."
+    },
+    {
+      "date": "2026-05-15",
+      "name": "Guide to optimizing for generative AI features on Search published",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#adding-a-new-guide-on-optimizing-for-generative-ai-features",
+      "notes": "Google's official guidance for AI features. SEO best practices still apply and non-commodity content matters. AEO/GEO myths such as chunking and llms.txt can be ignored.",
+      "verified": "Added a new guide on optimizing for generative AI features on Search."
+    },
+    {
+      "date": "2026-05-15",
+      "name": "Spam policies apply to generative AI responses in Google Search",
+      "kind": "policy",
+      "source": "https://developers.google.com/search/updates#clarifying-that-spam-policies-apply-to-generative-ai-responses-in-google-search",
+      "notes": "Trying to manipulate AI Overviews or AI Mode answers is spam under the same policies that cover ranking manipulation.",
+      "verified": "Clarified that our spam policies also apply to generative AI responses in Google Search."
+    },
+    {
+      "date": "2026-05-21",
+      "name": "May 2026 core update",
+      "kind": "core",
+      "source": "https://status.search.google.com/incidents/wdAXJk6LRRihEjpzEeWE",
+      "ended": "2026-06-02",
+      "notes": "Broad core ranking update. Attribute movement between 21 May and 2 Jun to it before looking for on-site causes.",
+      "verified": "Released the May 2026 core update ... The rollout was complete as of June 2, 2026."
+    },
+    {
+      "date": "2026-05-27",
+      "name": "Preferred sources start rolling out to AI Mode and AI Overviews",
+      "kind": "product",
+      "source": "https://developers.google.com/search/updates#preferred-sources-is-available-in-ai-mode-and-ai-overviews",
+      "notes": "A reader's preferred sources can now be favoured in AI features too. Since 18 Sep this needs the site to be included through the Search generative AI control.",
+      "verified": "The preferred sources feature is starting to roll out to AI Overviews and AI Mode."
+    },
+    {
+      "date": "2026-06-03",
+      "name": "Search Console Search Generative AI performance reports (initial rollout to a subset of sites)",
+      "kind": "product",
+      "source": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "notes": "First-party impressions data for AI Overviews, AI Mode and Discover gen-AI features, by page, country, device and date. Impressions only, no clicks.",
+      "verified": "We are rolling these reports out to a subset of websites"
+    },
+    {
+      "date": "2026-06-05",
+      "name": "Guidance on third-party SEO tools, services and advice",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/docs/fundamentals/third-party-seo",
+      "notes": "Google warns against tools and services that imply Google approval or access to internal ranking data, and it names AEO/GEO tools among them.",
+      "verified": "Third-party tools don't have access to our internal ranking data. They can't guarantee performance."
+    },
+    {
+      "date": "2026-06-15",
+      "name": "AI optimization guide: llms.txt clarified as not needed for Google Search",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#clarifying-guidance-on-llms.txt-files",
+      "notes": "llms.txt has no positive or negative effect on Google Search visibility. It is fine to keep for other systems.",
+      "verified": "these files aren't needed for Google Search (and won't negatively or positively impact your visibility or rankings)"
+    },
+    {
+      "date": "2026-06-17",
+      "name": "Site move guide: use Change of Address for every domain variant",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#site-move-guidance-now-includes-information-on-domain-variants",
+      "notes": "When moving a domain, submit Change of Address for www and non-www and every other subdomain variant, not only the canonical host.",
+      "verified": "The domain migrations work best when all variants of a site are migrated properly."
+    },
+    {
+      "date": "2026-06-24",
+      "name": "June 2026 spam update",
+      "kind": "spam",
+      "source": "https://status.search.google.com/incidents/YUX1peHev5a4fkxLDiUQ",
+      "ended": "2026-06-26",
+      "notes": "Global, all-language spam update that ran about two days.",
+      "verified": "The rollout was complete as of June 26, 2026."
+    },
+    {
+      "date": "2026-07-01",
+      "name": "Google Search sends users straight to publisher AMP pages (no AMP Cache or signed exchanges)",
+      "kind": "product",
+      "source": "https://developers.google.com/search/updates#updating-amp-documentation",
+      "notes": "AMP traffic now lands on the publisher's own AMP host, so analytics, caching and server load for AMP pages move to the origin. Google says AMP content \"will continue to rank just like any other web page\".",
+      "verified": "will now take users directly to the publisher's AMP host pages."
+    },
+    {
+      "date": "2026-07-07",
+      "name": "Merchant listing markup: Product.category and sale price effective dates documented",
+      "kind": "schema",
+      "source": "https://developers.google.com/search/updates#clarified-how-to-specify-sale-price-effective-dates-in-product-structured-data",
+      "notes": "Ecommerce only. validFrom, validThrough and priceValidUntil set the sale window; Product.category accepts text or a Google category code, matching Merchant Center feeds.",
+      "verified": "This explains how to use the validFrom, validThrough, and priceValidUntil schema.org properties to set the effective range for sale prices"
+    },
+    {
+      "date": "2026-07-07",
+      "name": "Search Console platform properties for Instagram, TikTok, X and YouTube (global from 2026-07-29)",
+      "kind": "product",
+      "source": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms",
+      "notes": "A new property type reports how a creator's social and video posts perform in Search, Discover and News. It became available to everyone on 29 Jul, with a guide to analysing the data.",
+      "verified": "we're thrilled to introduce platform properties, a new Search Console property type"
+    },
+    {
+      "date": "2026-07-10",
+      "name": "AI optimization guide updated: Search generative AI inclusion required for eligibility, plus a Search Console measurement section",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "notes": "No changelog entry. The date comes from the page stamp 'Last updated 2026-07-10 UTC'. A Wayback diff of the 9 Jul and 13 Jul snapshots shows three additions: the eligibility sentence, a Gen AI performance report section, and a warning about third-party tools that claim internal Google metrics.",
+      "verified": "a site must be included in Search generative AI features in Search Console to be eligible for display in generative AI features on Google Search."
+    },
+    {
+      "date": "2026-07-10",
+      "name": "Canonicalization troubleshooting: duplicate-cluster re-evaluation can take up to two weeks",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/docs/crawling-indexing/canonicalization-troubleshooting",
+      "notes": "After fixing near-duplicate pages, expect up to two weeks before Google splits them out of the duplicate cluster. Request Indexing can help.",
+      "verified": "Even after fixing content issues, Google might hold pages in a duplicate cluster for up to two weeks."
+    },
+    {
+      "date": "2026-07-16",
+      "name": "Google-NotebookLM fetcher renamed Google-GeminiNotebook",
+      "kind": "crawling",
+      "source": "https://developers.google.com/crawling/docs/changelog#updating-the-notebooklm-user-agent",
+      "notes": "Update any UA allow or deny lists and log classifiers. The fetcher page lists Google-NotebookLM as a 'Former agent (supported until August 2026)', so the old string is past its support window.",
+      "verified": "Updated the NotebookLM user agent to be Google-GeminiNotebook."
+    },
+    {
+      "date": "2026-07-24",
+      "name": "Review snippet guideline against fake and undisclosed incentivised reviews",
+      "kind": "policy",
+      "source": "https://developers.google.com/search/updates#added-a-new-review-snippet-guideline",
+      "notes": "Review markup that includes fake reviews, or incentivised reviews without disclosure, now breaks an explicit review snippet guideline.",
+      "verified": "about fake and undisclosed incentivized reviews."
+    },
+    {
+      "date": "2026-08-18",
+      "name": "August 2026 spam update",
+      "kind": "spam",
+      "source": "https://status.search.google.com/incidents/LEubPCm2octf2uMqCFKE",
+      "ended": "2026-08-21",
+      "notes": "Global, all-language spam update that ran about 2 days 16 hours.",
+      "verified": "The rollout was complete as of August 21, 2026."
+    },
+    {
+      "date": "2026-08-20",
+      "name": "Preferred sources: custom interactive 'Add to preferred sources' button",
+      "kind": "product",
+      "source": "https://developers.google.com/search/updates#new-custom-button-for-preferred-sources",
+      "notes": "A two-line JS button, or a deeplink, asks readers to add the site as a preferred source. Mainly a news and Top Stories feature, it also shows badges in AI Mode and AI Overviews. Domains and subdomains only.",
+      "verified": "Site owners can now implement a custom, interactive button to guide their audience to set them as a preferred source"
+    },
+    {
+      "date": "2026-08-28",
+      "name": "Site reputation abuse policy enforced differently in the EEA (effective 2026-08-30)",
+      "kind": "policy",
+      "source": "https://developers.google.com/search/blog/2026/08/update-site-reputation-policy",
+      "notes": "The blog post is dated 28 Aug and the change took effect 30 Aug. Site reputation manual actions no longer apply for searchers inside the EEA, where affected sections may come to rank independently over time.",
+      "verified": "For users inside the EEA, the impact of the manual action won't apply."
+    },
+    {
+      "date": "2026-08-28",
+      "name": "Supported favicon file formats listed explicitly",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#updated-the-favicon-documentation",
+      "notes": "No behaviour change: the documentation now lists the supported formats instead of linking to an external reference. Check a favicon against that list if it is not showing.",
+      "verified": "Google Search's supported file formats haven't changed; this update explicitly lists them in the documentation."
+    },
+    {
+      "date": "2026-08-31",
+      "name": "Generative AI performance report (Search) available to all websites",
+      "kind": "product",
+      "source": "https://support.google.com/webmasters/answer/16984139",
+      "notes": "Every property can now see AI Overviews and AI Mode impressions by page, country, device and date. Sites that have excluded themselves get no data.",
+      "verified": "As of August 31, 2026, we’ve rolled out these insights to all websites worldwide."
+    },
+    {
+      "date": "2026-08-31",
+      "name": "Search generative AI control in Search Console rolled out to all websites",
+      "kind": "product",
+      "source": "https://support.google.com/webmasters/answer/16908024",
+      "notes": "Settings > Search generative AI includes (the default) or excludes a property from AI Overviews, AI Mode and Discover gen-AI features. It is not a ranking signal and does not affect training, which Google-Extended controls. Check that a property you want in AI features is set to Include.",
+      "verified": "As of August 31, 2026, we’ve rolled out this control to all websites worldwide."
+    },
+    {
+      "date": "2026-09-16",
+      "name": "Search profile badge documentation",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/updates#added-documentation-on-adding-a-search-profile-badge-to-your-website",
+      "notes": "A site with a claimed Search profile (profile.google.com/@handle) can link to it with a badge, which affects Discover for followers. Optional and aimed at creators and publishers.",
+      "verified": "Added a new guide on how to add a Search profile badge to your website."
+    },
+    {
+      "date": "2026-09-17",
+      "name": "Mediapartners-Google documentation generalized to all ad-related Google products",
+      "kind": "crawling",
+      "source": "https://developers.google.com/crawling/docs/changelog#generalized-the-mediapartners-google-crawler-documentation",
+      "notes": "robots.txt rules addressed to Mediapartners-Google now explicitly cover Ad Manager and other ad products, not only AdSense. No action unless a robots.txt names that agent.",
+      "verified": "Crawling preferences addressed to the Mediapartners-Google user agent affect multiple ad-related Google products"
+    },
+    {
+      "date": "2026-09-18",
+      "name": "Preferred sources in AI Mode and AI Overviews require Search generative AI inclusion",
+      "kind": "documentation",
+      "source": "https://developers.google.com/search/docs/appearance/preferred-sources",
+      "notes": "No changelog entry. The date comes from the page stamp 'Last updated 2026-09-18 UTC', and a Wayback diff of the 13 Sep and 20 Sep snapshots shows the sentence was added then. Excluding the site through the gen-AI control also removes preferred-source badges in AI features.",
+      "verified": "To make your site eligible for display as a preferred source in these features, you must make sure your site is included in Search generative AI features in Search Console."
+    },
+    {
+      "date": "2026-09-24",
+      "name": "September 2026 spam update",
+      "kind": "spam",
+      "source": "https://status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu",
+      "ended": "ongoing",
+      "notes": "Global, all-language spam update. Still ongoing at 19:06 UTC on 29 Sep: the incident has one update and no end time in incidents.json. Google allows up to two weeks, so it should finish by about 8 Oct. Re-check the incident before quoting a completion date.",
+      "verified": "Released the September 2026 spam update ... The rollout may take up to two weeks to complete."
+    },
+    {
+      "date": "2026-09-24",
+      "name": "VideoObject structured data: creator property and interactionStatistic types documented",
+      "kind": "schema",
+      "source": "https://developers.google.com/search/updates#added-creator-property-and-updated-interactionstatistic-in-videoobject-structured-data",
+      "notes": "Matters only for sites that mark up videos. The creator property (author is also supported) and the supported interaction types are now documented.",
+      "verified": "Added the creator property (noting support for author) and updated interactionStatistic to document supported interaction types"
+    },
+    {
+      "date": "2026-09-24",
+      "name": "Web multimodal search type in Search Console performance and Generative AI reports",
+      "kind": "product",
+      "source": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+      "notes": "A new 'multimodal' search type filter covers Lens, Circle to Search, image uploads and Chrome 'Search this image'. It separates image-led queries from text in both reports and is rolling out globally.",
+      "verified": "Today, we are excited to introduce Search Console reporting for web multimodal search"
+    }
+  ]
+}

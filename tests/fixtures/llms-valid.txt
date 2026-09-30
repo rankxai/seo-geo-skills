@@ -1,0 +1,14 @@
+# Example Site
+
+> Example Site sells widgets and documents them well.
+
+Some free prose about the site, with no headings.
+
+## Key pages
+
+- [Pricing](https://example.com/pricing): plans and numbers
+- [About](https://example.com/about)
+
+## Optional
+
+- [Archive](https://example.com/archive): the long tail

@@ -1,0 +1,331 @@
+{
+  "about": "Changes at AI answer platforms and the CDN in front of most sites (OpenAI, Anthropic, Perplexity, Microsoft, Apple, Meta, Cloudflare) that affect whether a site is crawled, cited, shown or measured. Google's own changes are in google-changes.json. Read before writing or refreshing any claim about these platforms, and check the date of the newest entry against today before trusting it as complete.",
+  "policy": "Every entry cites a page on the vendor's own domain and carries a short verbatim quote from that page in the verified field. Trade-press claims never enter updates. Where the date is a page's own Published or Updated stamp rather than an announcement, the notes say so, because such a page does not say which sentence changed. Bump last_verified whenever an entry is added or re-read. Treat the file as stale after about 30 days without a re-read.",
+  "last_verified": "2026-09-29",
+  "updates": [
+    {
+      "date": "2026-02-10",
+      "vendor": "Microsoft",
+      "name": "Bing Webmaster Tools AI Performance report in public preview",
+      "kind": "measurement",
+      "source": "https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview",
+      "notes": "The first first-party report of how often a site is cited in AI answers, covering Copilot, Bing's AI summaries and partner integrations, with the grounding queries that led to each citation. The same post ties IndexNow to keeping AI answers current.",
+      "verified": "IndexNow helps keep information fresh across search and AI experiences by notifying participating search engines whenever content is added, updated, or removed."
+    },
+    {
+      "date": "2026-03-12",
+      "vendor": "Perplexity",
+      "name": "Premium Sources: licensed paywalled data in Computer",
+      "kind": "policy",
+      "source": "https://www.perplexity.ai/hub/blog/announcing-premium-sources",
+      "notes": "Perplexity now answers some research questions from licensed paywalled data (Statista, CB Insights, PitchBook) as well as the open web, and says health, legal and news sources are next: a licensing route for publishers. The post shows no date; 12 March is from the Perplexity blog listing.",
+      "verified": "Starting today, Computer can access select Statista, CB Insights, and PitchBook data directly as part of your research workflow."
+    },
+    {
+      "date": "2026-03-18",
+      "vendor": "Perplexity",
+      "name": "Comet browser on iOS with ordinary results pages for local queries",
+      "kind": "product",
+      "source": "https://www.perplexity.ai/hub/blog/meet-comet-for-ios",
+      "notes": "Comet on iPhone shows ordinary results pages for local and high-intent queries and hands harder questions to the assistant, so local businesses can be reached through both. The date is from the Perplexity blog listing.",
+      "verified": "The search experience in Comet iOS provides traditional search results pages for fast, local, and high-intent queries that are more common on mobile."
+    },
+    {
+      "date": "2026-03-24",
+      "vendor": "OpenAI",
+      "name": "Product discovery: ACP feeds and merchant-owned checkout",
+      "kind": "shopping",
+      "source": "https://openai.com/index/powering-product-discovery-in-chatgpt/",
+      "notes": "ChatGPT shopping moved to visual, side-by-side product results fed by merchant feeds through the Agentic Commerce Protocol, and merchants may now use their own checkout. OpenAI moved away from standalone Instant Checkout from this date; it did not shut it down, and its shopping help page still describes an Instant Checkout option for some eligible products and merchants.",
+      "verified": "We’ve found that the initial version of Instant Checkout did not offer the level of flexibility that we aspire to provide, so we’re allowing merchants to use their own checkout experiences"
+    },
+    {
+      "date": "2026-03-26",
+      "vendor": "OpenAI",
+      "name": "ChatGPT ads pilot to expand beyond the US",
+      "kind": "policy",
+      "source": "https://openai.com/index/testing-ads-in-chatgpt/",
+      "notes": "A dated update on the original ads post announcing pilots in Canada, Australia and New Zealand. Sponsored placements beside answers are separate from organic product results.",
+      "verified": "In the coming weeks, we’ll begin expanding beyond the U.S., starting with pilots in Canada, Australia, and New Zealand."
+    },
+    {
+      "date": "2026-04-07",
+      "vendor": "Anthropic",
+      "name": "Crawler help article updated (ClaudeBot, Claude-User, Claude-SearchBot)",
+      "kind": "crawling",
+      "source": "https://support.claude.com/en/articles/8896518",
+      "notes": "The date is the article's own stamp and the article does not say which text changed. It lists three separate bots, so a site can block training (ClaudeBot) and keep search indexing (Claude-SearchBot) and user fetches (Claude-User).",
+      "verified": "Disabling Claude-SearchBot on your site prevents our system from indexing your content for search optimization, which may reduce your site's visibility and accuracy in user search results."
+    },
+    {
+      "date": "2026-04-16",
+      "vendor": "OpenAI",
+      "name": "Ads roll out in Australia, New Zealand and Canada",
+      "kind": "policy",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "ChatGPT release notes entry. Ads appear only on the Free and Go plans.",
+      "verified": "We're beginning to roll out ads for users on Free and Go plans in Australia, New Zealand, and Canada."
+    },
+    {
+      "date": "2026-04-17",
+      "vendor": "Cloudflare",
+      "name": "Redirects for AI Training",
+      "kind": "controls",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-04-17-redirects-for-ai-training/",
+      "notes": "An optional toggle on Pro plans and above sends verified AI training crawlers to the canonical URL when they request a duplicate. People, search crawlers and AI search agents still get the original page.",
+      "verified": "AI training crawlers that request a page with a canonical tag pointing elsewhere receive a 301 redirect to the canonical version."
+    },
+    {
+      "date": "2026-04-17",
+      "vendor": "Cloudflare",
+      "name": "AI Crawl Control: Content Format chart and Directives tab",
+      "kind": "measurement",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-04-17-tools-for-agentic-internet/",
+      "notes": "A chart compares the content types AI systems ask for with what the origin serves. The Robots.txt tab became Directives and links to an Agent Readiness score.",
+      "verified": "The Robots.txt tab has been renamed to Directives and now includes a link to check your site's Agent Readiness"
+    },
+    {
+      "date": "2026-05-05",
+      "vendor": "OpenAI",
+      "name": "GPT-5.5 Instant becomes the default and changes when ChatGPT searches",
+      "kind": "search",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "A model change alone can move how often a site is retrieved and cited, with nothing changed on the site. Note model changes beside any prompt-panel trend.",
+      "verified": "improves everyday answers across accuracy, clarity and conciseness, image understanding, STEM questions, and when ChatGPT decides to search the web."
+    },
+    {
+      "date": "2026-05-05",
+      "vendor": "OpenAI",
+      "name": "Ads Manager beta, cost-per-click bidding, Conversions API and pixel",
+      "kind": "measurement",
+      "source": "https://openai.com/index/new-ways-to-buy-chatgpt-ads/",
+      "notes": "Self-serve buying and CPC bidding opened ChatGPT ads to smaller advertisers, with on-site conversion tracking through OpenAI tags.",
+      "verified": "We recently launched Conversions API and pixel-based measurement so advertisers can better understand what happens after someone engages with an ad"
+    },
+    {
+      "date": "2026-05-06",
+      "vendor": "Microsoft",
+      "name": "Bing: the index shifts from ranking pages to supporting answers",
+      "kind": "search",
+      "source": "https://blogs.bing.com/search/2026/5/Evolving-role-of-the-index-From-ranking-pages-to-supporting-answers/",
+      "notes": "Bing says grounding AI answers puts more weight on factual accuracy, attribution and freshness than ranking did. Keep facts current and clearly sourced.",
+      "verified": "In grounding, a stale fact produces a misleading response."
+    },
+    {
+      "date": "2026-05-12",
+      "vendor": "OpenAI",
+      "name": "More inline web images with source attribution",
+      "kind": "search",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "Images from the web appear inside answers with attribution, another way for image-rich pages to be shown and credited.",
+      "verified": "You can click any image to view it at its original size and see source attribution."
+    },
+    {
+      "date": "2026-05-21",
+      "vendor": "Meta",
+      "name": "Meta web crawlers page updated",
+      "kind": "crawling",
+      "source": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers",
+      "notes": "The date is the page stamp and the page does not say which entries were new. It lists Meta-WebIndexer (Meta AI search citations), Meta-ExternalAds, Meta-ExternalAgent (training) and Meta-ExternalFetcher, each with its own robots.txt token.",
+      "verified": "Allowing Meta-WebIndexer in your robots.txt file helps us cite and link to your content in Meta AI’s responses."
+    },
+    {
+      "date": "2026-06-02",
+      "vendor": "Microsoft",
+      "name": "Microsoft Web IQ grounding APIs",
+      "kind": "search",
+      "source": "https://blogs.bing.com/search/June-2026/Announcing-Microsoft-Web-IQ",
+      "notes": "Grounding APIs for AI agents built on the Bing index, returning passages rather than whole pages. Microsoft says they honour robots rules and publisher controls, so being indexable by Bing now also feeds third-party agents.",
+      "verified": "Today, Microsoft is launching Web IQ: a suite of AI-native grounding APIs built for the agentic era"
+    },
+    {
+      "date": "2026-06-04",
+      "vendor": "OpenAI",
+      "name": "Ads roll out in the UK",
+      "kind": "policy",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "Free and Go plans only; paid plans stay ad-free.",
+      "verified": "We're beginning to roll out ads for users on Free and Go plans in the UK."
+    },
+    {
+      "date": "2026-06-08",
+      "vendor": "Apple",
+      "name": "Siri AI announced with web-sourced answers",
+      "kind": "search",
+      "source": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+      "notes": "Announced at WWDC26. Siri will generate answers from current web information, which makes Applebot access and Apple's nosnippet rule matter for visibility.",
+      "verified": "go out to the web to get up-to-date information using broad world knowledge and generate a helpful answer"
+    },
+    {
+      "date": "2026-06-16",
+      "vendor": "Microsoft",
+      "name": "Bing AI Performance adds Intents, Topics, Citation Share and Compare",
+      "kind": "measurement",
+      "source": "https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare",
+      "notes": "Grounding queries are now grouped by intent and topic, with your share of citations per query and period comparison. Microsoft says Citation Share is observational and shows no competitor domains.",
+      "verified": "Today, we are excited to expand that foundation with four new capabilities available in preview globally within Bing Webmaster Tools: Intents, Topics, Citation Share, and Compare."
+    },
+    {
+      "date": "2026-06-16",
+      "vendor": "Cloudflare",
+      "name": "Pay Per Crawl advanced configuration",
+      "kind": "controls",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-06-16-pay-per-crawl-advanced-configuration/",
+      "notes": "Sites in Pay Per Crawl can leave some URLs free and set prices from the origin or a Worker.",
+      "verified": "Dynamic pricing by having your origin return a crawler-price response header"
+    },
+    {
+      "date": "2026-07-01",
+      "vendor": "Cloudflare",
+      "name": "Search, Agent and Training AI traffic controls on all plans",
+      "kind": "controls",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-07-01-ai-traffic-options/",
+      "notes": "Every plan, Free included, can block AI traffic by behaviour, on all pages or only on pages with ads. The same release announced the new defaults that took effect on 15 September 2026.",
+      "verified": "Cloudflare groups AI traffic into three behaviors you can control independently: Search, Agent, and Training."
+    },
+    {
+      "date": "2026-07-01",
+      "vendor": "Cloudflare",
+      "name": "BotBase directory and crawl-to-referral dashboard",
+      "kind": "measurement",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-07-01-botbase-attribution-business-insights/",
+      "notes": "Enterprise Bot Management only. Compares how often each operator crawls a site with how many visitors it sends back.",
+      "verified": "The dashboard reports crawl-to-referral ratios both site-wide and per bot operator"
+    },
+    {
+      "date": "2026-07-09",
+      "vendor": "OpenAI",
+      "name": "ChatGPT Atlas browser retired",
+      "kind": "product",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "Atlas browsing moved into the ChatGPT desktop app, extension and Codex. OpenAI's publisher FAQ still mentions Atlas, so treat that part of it as out of date.",
+      "verified": "Atlas is scheduled to stop working on August 9, 2026."
+    },
+    {
+      "date": "2026-07-13",
+      "vendor": "Cloudflare",
+      "name": "Markdown for Agents keeps origin Content Signals and adds a default",
+      "kind": "controls",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-07-13-markdown-for-agents-header-preservation/",
+      "notes": "A site that turns on Markdown for Agents without sending its own content-signal header gets a fully permissive one. Send your own header if you want to restrict AI use. The permissive default dates from the feature's launch in February 2026.",
+      "verified": "When the origin does not send one, Cloudflare adds the default Content-Signal: ai-train=yes, search=yes, ai-input=yes."
+    },
+    {
+      "date": "2026-08-10",
+      "vendor": "OpenAI",
+      "name": "Restaurant reservations in ChatGPT",
+      "kind": "product",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "Bookable times come from OpenTable, Resy and Yelp, so for restaurants visibility here depends on those partners rather than the restaurant's own site.",
+      "verified": "ChatGPT can now help you find available restaurant reservations with OpenTable, Resy, and Yelp."
+    },
+    {
+      "date": "2026-08-11",
+      "vendor": "OpenAI",
+      "name": "ChatGPT Ads launched in the UK, Mexico, Brazil, Japan and South Korea",
+      "kind": "policy",
+      "source": "https://openai.com/index/testing-ads-in-chatgpt/",
+      "notes": "A dated update on the original ads post, confirming full launch after the pilots.",
+      "verified": "ChatGPT Ads has now launched in the United Kingdom, Mexico, Brazil, Japan, and South Korea."
+    },
+    {
+      "date": "2026-08-18",
+      "vendor": "OpenAI",
+      "name": "ChatGPT Ads expands to 31 European markets",
+      "kind": "policy",
+      "source": "https://openai.com/index/chatgpt-ads-expands-across-europe/",
+      "notes": "Sold through OpenAI's sales team and partners at launch; self-serve buying in Europe followed on 31 August.",
+      "verified": "Six months after we began testing ads in the U.S., we’re bringing ChatGPT Ads to 31 European markets."
+    },
+    {
+      "date": "2026-08-21",
+      "vendor": "Cloudflare",
+      "name": "Bot Preference Sync writes AI bot settings into robots.txt",
+      "kind": "controls",
+      "source": "https://blog.cloudflare.com/bot-preference-sync/",
+      "notes": "Keeps robots.txt in line with the dashboard's Search, Agent and Training settings, so the stated preference and the enforced one agree. It replaced managed robots.txt, which Cloudflare deprecated on 15 September 2026.",
+      "verified": "We're announcing Bot Preference Sync, available to all customers from the Free tier to Enterprise."
+    },
+    {
+      "date": "2026-08-25",
+      "vendor": "OpenAI",
+      "name": "ChatGPT Work's cloud browser completes tasks on signed-in websites",
+      "kind": "product",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "On Plus and Pro the agent can use sites behind a login once the user signs in. OpenAI's cloud browser help article says it signs requests with Web Bot Auth, so sites can verify it.",
+      "verified": "ChatGPT Work’s browser on web and mobile can also help you get tasks done on some websites that require you to sign in"
+    },
+    {
+      "date": "2026-08-31",
+      "vendor": "OpenAI",
+      "name": "Site tools via WebMCP in the ChatGPT desktop browser",
+      "kind": "product",
+      "source": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "notes": "ChatGPT Work and Codex can call tools a website exposes through WebMCP, with no separate connection. The first major assistant to use WebMCP, which is still a proposed standard.",
+      "verified": "Site tools use WebMCP and require a supported account, model, and webpage."
+    },
+    {
+      "date": "2026-08-31",
+      "vendor": "OpenAI",
+      "name": "ChatGPT Ads self-serve in India, Europe, the Middle East and North Africa",
+      "kind": "shopping",
+      "source": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/",
+      "notes": "Product feeds, geographic targeting and custom audiences are now part of the ads platform, bought directly through Ads Manager.",
+      "verified": "Starting later today, advertisers can purchase ChatGPT ads directly via Ads Manager across India, Europe, the Middle East, and North Africa."
+    },
+    {
+      "date": "2026-08-31",
+      "vendor": "Cloudflare",
+      "name": "Browser Run crawl endpoint honours Content Signals",
+      "kind": "controls",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-08-31-crawl-content-use/",
+      "notes": "Cloudflare's own crawling API refuses a site whose robots.txt Content Signals are stricter than the use the caller declares. The first crawler documented as honouring Content Signals, and it is Cloudflare's own.",
+      "verified": "If a target site's robots.txt sets a use level that is more restrictive than your declared contentUse, the crawl request is rejected with a 400 error."
+    },
+    {
+      "date": "2026-09-04",
+      "vendor": "Apple",
+      "name": "Applebot page updated: nosnippet and isAccessibleForFree for AI answers",
+      "kind": "crawling",
+      "source": "https://support.apple.com/en-us/119829",
+      "notes": "The date is the page stamp and the page does not say which text is new. nosnippet keeps content out of Apple's AI-generated answers, and isAccessibleForFree set to false keeps a page in search but out of AI context.",
+      "verified": "Apple will not use data tagged nosnippet as additional context and up-to-date content when AI models are used to generate output for display in Apple products and services."
+    },
+    {
+      "date": "2026-09-14",
+      "vendor": "Apple",
+      "name": "Siri AI released with web-sourced answers",
+      "kind": "search",
+      "source": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+      "notes": "Siri AI shipped with Apple's autumn releases and answers from web information, which puts the Applebot controls into daily use.",
+      "verified": "Siri AI will leverage information from across the web to deliver helpful, accurate answers"
+    },
+    {
+      "date": "2026-09-15",
+      "vendor": "Cloudflare",
+      "name": "Disallow AI Training; Block now also hits Googlebot, Bingbot and Applebot",
+      "kind": "controls",
+      "source": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+      "notes": "A Training Block chosen from this date also blocks search crawlers that train too; to keep search, use Disallow AI Training. Existing Training blocks were migrated to Disallow AI Training. Block AI Bots and managed robots.txt are deprecated.",
+      "verified": "Block and Block on pages with ads now apply to mixed-use crawlers, including Applebot, Bingbot, and Googlebot, so either setting impacts search as well as training."
+    },
+    {
+      "date": "2026-09-16",
+      "vendor": "Anthropic",
+      "name": "New Claude experience: web search runs when Claude judges it useful",
+      "kind": "search",
+      "source": "https://support.claude.com/en/articles/12138966-release-notes",
+      "notes": "Rolling out to Pro and Max. Anthropic's web search help article says the new experience has no search toggle, so whether Claude retrieves no longer depends on a user switching search on. Expect Claude citations to rise in prompt panels that used to show none.",
+      "verified": "We're rolling out a new Claude experience that makes everything Claude Cowork does available from any conversation."
+    },
+    {
+      "date": "2026-09-23",
+      "vendor": "OpenAI",
+      "name": "ChatGPT Ads expands to Southeast Asia and Taiwan",
+      "kind": "policy",
+      "source": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan/",
+      "notes": "Continues the market-by-market rollout of sponsored placements in ChatGPT.",
+      "verified": "Starting today, ChatGPT Ads will begin rolling out across Indonesia, Malaysia, the Philippines, Singapore, Thailand, Vietnam, and Taiwan."
+    }
+  ]
+}

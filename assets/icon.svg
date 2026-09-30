@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="SEO and GEO skills">
+  <rect width="512" height="512" rx="96" fill="#111518"/>
+  <g>
+    <rect x="80" y="112" width="40" height="288" rx="6" fill="#1F7A4D"/>
+    <rect x="132" y="142" width="40" height="258" rx="6" fill="#2E6F95"/>
+    <rect x="184" y="172" width="40" height="228" rx="6" fill="#2E6F95"/>
+    <rect x="236" y="202" width="40" height="198" rx="6" fill="#6B6F2A"/>
+    <rect x="288" y="232" width="40" height="168" rx="6" fill="#6B6F2A"/>
+    <rect x="340" y="262" width="40" height="138" rx="6" fill="#8A5A1C"/>
+    <rect x="392" y="292" width="40" height="108" rx="6" fill="#9B2C2C"/>
+  </g>
+</svg>

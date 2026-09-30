@@ -1,0 +1,32 @@
+name: Claim is wrong or stale
+description: A statistic, rule or date in the skills no longer matches its primary source
+title: "Stale or wrong: "
+labels: ["claim"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: File and line
+      placeholder: skills/seo-geo/SKILL.md line 120
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What is true, and the primary source
+      description: Link the study, standard or vendor documentation itself, not an article about it.
+    validations:
+      required: true
+  - type: input
+    id: checked
+    attributes:
+      label: Date you checked
+      placeholder: 2026-10-14
+    validations:
+      required: true

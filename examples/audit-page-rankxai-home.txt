@@ -1,0 +1,15 @@
+audit-page  https://rankxai.com/  (HTTP 200, 511,141 bytes)
+
+  title        RankX AI: AI Search Visibility and Google Rank Tracking
+  canonical    https://rankxai.com
+  @types       AggregateOffer, Answer, FAQPage, Offer, Organization, PropertyValue, Question, SoftwareApplication, UnitPriceSpecification, WebPage, WebSite
+
+  info   server-text: 32521 characters (5505 words) of visible text in the raw HTML
+  info   canonical: canonical points at this URL
+  info   json-ld-types: @type: AggregateOffer, Answer, FAQPage, Offer, Organization, PropertyValue, Question, SoftwareApplication, UnitPriceSpecification, WebPage, WebSite
+  info   json-ld-retired: @type FAQPage: no Google rich result since 7 May 2026; harmless, and other consumers may still read it
+  info   answer-first: first paragraph has 27 words and opens with a plain statement, not a question or preamble: "RankX AI tracks your mentions, citations and competitor share across ChatGPT, Claude, Gemini, Grok, Perplexity..."
+
+  0 error(s), 0 warning(s), 5 info
+  A clean run means the mechanical rules pass. Whether the page deserves to be cited is a separate, human question.
+

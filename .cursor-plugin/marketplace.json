@@ -1,0 +1,13 @@
+{
+  "name": "rankx",
+  "owner": {
+    "name": "RankX AI"
+  },
+  "plugins": [
+    {
+      "name": "rankx-seo",
+      "source": "./",
+      "description": "Evidence-graded SEO, GEO and AEO skills with runnable checks: get found by Google and cited by ChatGPT, Perplexity, Claude, Copilot, Gemini and AI Overviews."
+    }
+  ]
+}

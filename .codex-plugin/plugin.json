@@ -1,0 +1,48 @@
+{
+  "name": "rankx-seo",
+  "version": "1.0.0",
+  "description": "Evidence-graded SEO, GEO and AEO skills with runnable checks: get found by Google and cited by ChatGPT, Perplexity, Claude, Copilot, Gemini and AI Overviews.",
+  "author": {
+    "name": "RankX AI",
+    "url": "https://rankxai.com"
+  },
+  "homepage": "https://github.com/rankxai/seo-geo-skills",
+  "repository": "https://github.com/rankxai/seo-geo-skills",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "geo",
+    "aeo",
+    "generative-engine-optimization",
+    "answer-engine-optimization",
+    "ai-search",
+    "ai-overviews",
+    "llm-seo",
+    "technical-seo",
+    "structured-data",
+    "robots-txt",
+    "ai-crawlers",
+    "content-review",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "SEO and GEO Skills",
+    "shortDescription": "Evidence-graded SEO checks",
+    "longDescription": "Audit a page for Google and AI assistants, check which AI crawlers your robots.txt and CDN let through, sweep a sitemap, and review a draft before it ships. Every rule is graded by the strength of the evidence behind it.",
+    "developerName": "RankX AI",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "defaultPrompt": [
+      "Audit https://example.com/pricing for SEO and AI search.",
+      "Which AI crawlers can reach my site?",
+      "Review this draft before I publish it."
+    ],
+    "websiteURL": "https://github.com/rankxai/seo-geo-skills",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

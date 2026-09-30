@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Robots.txt for AI crawlers: a practical guide</title>
+<meta name="description" content="How robots.txt group selection works for AI crawlers, which bots honour it, and how to check your own file against RFC 9309.">
+<link rel="canonical" href="https://example.com/guide">
+<meta property="og:image" content="https://example.com/og/guide.png">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Robots.txt for AI crawlers","author":{"@type":"Person","name":"Sam Writer"},"datePublished":"2026-09-01"}</script>
+</head>
+<body>
+<header><nav><a href="/">Home</a></nav></header>
+<main>
+<h1>Robots.txt for AI crawlers</h1>
+<img src="/img/hero.png" alt="A robots.txt file open in an editor" width="1200" height="630">
+<p>Robots.txt is a plain text file at the root of a site that tells crawlers which paths they may fetch. RFC 9309 defines how a crawler picks the group of rules that applies to it.</p>
+<h2>How group selection works</h2>
+<p>A crawler looks for groups whose User-agent line names its product token exactly, ignoring case. If one or more groups name it, their rules are combined and the star group is ignored. If none do, the star group applies.</p>
+<h3>Longest match wins</h3>
+<p>Within the selected rules, the longest matching path pattern decides, and Allow wins a tie. That is why Disallow: / together with Allow: /blog still lets a crawler fetch every page under /blog.</p>
+<h2>Which crawlers honour it</h2>
+<p>Search crawlers from the large vendors state that they honour robots.txt. Fetchers that act on a user's request are a different case, and several vendors say the rules may not apply to them.</p>
+<img src="/img/table.png" alt="" width="800" height="400" loading="lazy">
+</main>
+<footer><p>Example Ltd</p></footer>
+</body>
+</html>
